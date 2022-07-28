@@ -12,18 +12,18 @@ public class Ejecutor {
         entrada.useLocale(Locale.US);
         do {
             System.out.println("Ingrese la cedula del trabajador: ");
-            String cedu = entrada.nextLine();
+            String id = entrada.nextLine();
             System.out.println("Ingrese el nombre del trabajador: ");
             String nomb = entrada.nextLine();
             System.out.println("Ingrese el correo del trabajador: ");
-            String corre = entrada.nextLine();
+            String mail = entrada.nextLine();
             System.out.println("Ingrese el sueldo del trabajador: ");
-            double sueld = entrada.nextDouble();
+            double sueldo = entrada.nextDouble();
             entrada.nextLine();
             System.out.println("Ingrese el mes que trabajo:");
-            String mesSueld = entrada.nextLine();
+            int mesSueld = entrada.nextInt();
 
-            Trabajadores trabajador1 = new Trabajadores(cedu, nomb, corre, sueld,
+            Trabajadores trabajador1 = new Trabajadores(id, nomb, mail, sueldo,
                     mesSueld);
             c.insertarTrabajador(trabajador1);
             //entrada.nextLine();

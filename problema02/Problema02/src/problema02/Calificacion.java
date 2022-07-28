@@ -9,13 +9,13 @@ public class Calificacion {
     private double calificacion3;
     private double promedio;
 
-    public Calificacion(String nomb, String apelli, double cali1, double cali2,
-            double cali3) {
+    public Calificacion(String nomb, String apelli, double nota1, double nota2,
+            double nota3) {
         nombre = nomb;
         apellido = apelli;
-        calificacion1 = cali1;
-        calificacion2 = cali2;
-        calificacion3 = cali3;
+        calificacion1 = nota1;
+        calificacion2 = nota2;
+        calificacion3 = nota3;
     }
 
     public void establecerNombre(String c) {

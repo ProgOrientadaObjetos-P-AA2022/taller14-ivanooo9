@@ -5,36 +5,36 @@ public class Trabajadores {
     private String cedula;
     private String nombre;
     private String correo;
-    private double sueldo;
-    private String mesSueldo;
+    private double salario;
+    private int mesSalario;
 
-    public Trabajadores(String cedu, String nomb, String corre, double sueld,
-            String mesSueld) {
-        cedula = cedu;
+    public Trabajadores(String id, String nomb, String mail, double sueldo,
+            int mesSueld) {
+        cedula = id;
         nombre = nomb;
-        correo = corre;
-        sueldo = sueld;
-        mesSueldo = mesSueld;
+        correo = mail;
+        salario = sueldo;
+        mesSalario = mesSueld;
     }
 
-    public void establecerCedula(String cedu) {
-        cedula = cedu;
+    public void establecerCedula(String id) {
+        cedula = id;
     }
 
     public void establecerNombre(String nomb) {
         nombre = nomb;
     }
 
-    public void establecerCorreo(String corre) {
-        correo = corre;
+    public void establecerCorreo(String mail) {
+        correo = mail;
     }
 
-    public void establecerSueldo(double sueld) {
-        sueldo = sueld;
+    public void establecerSalario(double sueldo) {
+        salario = sueldo;
     }
 
-    public void establecerMesSueldo(String mesSueld) {
-        mesSueldo = mesSueld;
+    public void establecerMesSalario(int mesSueld) {
+        mesSalario = mesSueld;
     }
 
     public String obtenerCedula() {
@@ -49,12 +49,12 @@ public class Trabajadores {
         return correo;
     }
 
-    public double obtenerSueldo() {
-        return sueldo;
+    public double obtenerSalario() {
+        return salario;
     }
 
-    public String obtenerMesSueldo() {
-        return mesSueldo;
+    public int obtenerMesSalario() {
+        return mesSalario;
     }
 
     @Override
@@ -66,8 +66,8 @@ public class Trabajadores {
                 obtenerCedula(),
                 obtenerNombre(),
                 obtenerCorreo(),
-                obtenerSueldo(),
-                obtenerMesSueldo());
+                obtenerSalario(),
+                obtenerMesSalario());
         return cadena;
     }
 }

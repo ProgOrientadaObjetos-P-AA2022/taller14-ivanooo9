@@ -32,18 +32,18 @@ public class Enlace {
     }
 
     public void insertarTrabajador(Trabajadores st) {
-
+ 
         try {
             establecerConexion();
             Statement statement = obtenerConexion().createStatement();
             String cadena = String.format("INSERT INTO trabajadores (cedula,"
-                    + "nombre,correo,sueldo,mes)"
-                    + "values ('%s', '%s', '%s', '%.2f', '%s')",
+                    + "nombre,correo,salario,mesSalario)"
+                    + "values ('%s', '%s', '%s', '%.2f', '%d')",
                     st.obtenerCedula(),
                     st.obtenerNombre(),
                     st.obtenerCorreo(),
-                    st.obtenerSueldo(),
-                    st.obtenerMesSueldo());
+                    st.obtenerSalario(),
+                    st.obtenerMesSalario());
             statement.executeUpdate(cadena);
             obtenerConexion().close();
         } catch (SQLException e) {
@@ -62,10 +62,10 @@ public class Enlace {
 
             ResultSet rs = statement.executeQuery(data);
             while (rs.next()) {
-                Trabajadores miSueldo = new Trabajadores(rs.getString("cedula"),
+                Trabajadores miSalario = new Trabajadores(rs.getString("cedula"),
                         rs.getString("nombre"), rs.getString("correo"),
-                        rs.getDouble("sueldo"), rs.getString("mes"));
-                lista.add(miSueldo);
+                        rs.getDouble("salario"), rs.getInt("mesSalario"));
+                lista.add(miSalario);
             }
 
             obtenerConexion().close();
